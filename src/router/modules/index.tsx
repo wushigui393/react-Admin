@@ -1,7 +1,7 @@
 import { FormattedMessage } from '@/components/FormattedMessage';
 import Layout from '@/layout';
 import Authority from '@/layout/Authority';
-import { AppstoreOutlined, DatabaseOutlined, HomeOutlined, UserSwitchOutlined,ProjectOutlined } from '@ant-design/icons';
+import { AppstoreOutlined, DatabaseOutlined, HomeOutlined, UserSwitchOutlined,ProjectOutlined,UsbOutlined } from '@ant-design/icons';
 import type { RouteList } from '@/router/route';
 import {
   DetailsInfo,
@@ -13,7 +13,10 @@ import {
   Permissions,
   TestPermissionsA,
   TestPermissionsB,
-  UnitView
+  FormView,
+  TableView,
+  PdfView,
+  WaterMarkView,
 } from '../lazy/view';
 import { ErrorElement, ErrorPage403, Login, Refresh } from '../lazy/whiteList';
 
@@ -33,10 +36,37 @@ export const defaultRoute: RouteList[] = [
       {
         path: 'form',
         id: 'Form',
-        element: <UnitView />,
+        element: <FormView />,
         handle: { label: <FormattedMessage id="layout.memu.form" /> },
       },
+      {
+        path: 'table',
+        id: 'Table',
+        element: <TableView />,
+        handle: { label: <FormattedMessage id="layout.memu.table" /> },
+      }
     ],
+  },
+  {
+    path: '/functions',
+    id: 'Functions',
+    redirect: '/functions/watermark',
+    handle: { label: <FormattedMessage id="layout.memu.functions" />, icon:<UsbOutlined /> },
+    children: [
+      {
+        path: 'watermark',
+        id: 'Watermark',
+        element: <WaterMarkView />,
+        handle: { label: <FormattedMessage id="layout.memu.waterMark" /> },
+      },
+      {
+        path: 'pdf',
+        id: 'Pdf',
+        element: <PdfView />,
+        handle: { label: <FormattedMessage id="layout.memu.pdf" /> },
+      },
+   
+    ]
   },
 
   {

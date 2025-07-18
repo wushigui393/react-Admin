@@ -6,6 +6,14 @@ const power = [
     id: 'Home',
   },
   {
+    path: '/components',
+    id: 'Components',
+  },
+  {
+     path: '/functions',
+    id: 'Functions',
+  },
+  {
     path: '/nested',
     id: 'Nested',
     children: [

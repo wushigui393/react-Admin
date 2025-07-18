@@ -28,7 +28,8 @@ const Sidebar = memo(() => {
   const responsive = useResponsive();
   const navigate = useNavigate();
   const { menuList } = useMenuList();
-
+  // console.log('menuList1',menuList);
+  
   useEffect(() => {
     if (!collapsed) {
       setOpenKeys(getParentPaths(pathname, menuList));

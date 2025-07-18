@@ -11,5 +11,13 @@ export const DetailsInfo = lazy(() => import('@/views/DetailsPage/DetailsInfo'))
 export const DetailsParams = lazy(() => import('@/views/DetailsPage/DetailsParams'));
 
 //表单组件
-export const UnitView = lazy(() => import('@/views/UnitView'));
+export const FormView = lazy(() => import('@/views/UnitView/FormView'));
+//表格组件
+export const TableView = lazy(() => import('@/views/UnitView/TableView'));
+//水印组件
+export const WaterMarkView = lazy(() => import('@/views/Functions/WaterMark'));
+//PDF组件
+export const PdfView = lazy(() => import('@/views/Functions/Pdf'));
+
+
 
