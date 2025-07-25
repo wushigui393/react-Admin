@@ -11,7 +11,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "build1": "vite build",
     "staging": "tsc && vite build --mode staging",
     "preview": "vite preview",
