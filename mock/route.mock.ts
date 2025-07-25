@@ -13,6 +13,10 @@ const power = [
      path: '/functions',
     id: 'Functions',
   },
+   {
+     path: '/Visualization',
+    id: 'Visualization',
+  },
   {
     path: '/nested',
     id: 'Nested',

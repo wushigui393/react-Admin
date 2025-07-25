@@ -52,8 +52,6 @@ const TabsPage = memo((_props: Props) => {
       };
     });
   }, [multiTabs]);
-  
-
   const onEdit: TabsProps['onEdit'] = (targetKey, action) => {
     if (action === 'remove') {
       removeTab(targetKey as string);

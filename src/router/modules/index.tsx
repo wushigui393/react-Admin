@@ -1,7 +1,7 @@
 import { FormattedMessage } from '@/components/FormattedMessage';
 import Layout from '@/layout';
 import Authority from '@/layout/Authority';
-import { AppstoreOutlined, DatabaseOutlined, HomeOutlined, UserSwitchOutlined,ProjectOutlined,UsbOutlined } from '@ant-design/icons';
+import { AppstoreOutlined, DatabaseOutlined, HomeOutlined, UserSwitchOutlined,ProjectOutlined,UsbOutlined,BarChartOutlined } from '@ant-design/icons';
 import type { RouteList } from '@/router/route';
 import {
   DetailsInfo,
@@ -17,6 +17,9 @@ import {
   TableView,
   PdfView,
   WaterMarkView,
+  G2View,
+  S2View,
+  G6View
 } from '../lazy/view';
 import { ErrorElement, ErrorPage403, Login, Refresh } from '../lazy/whiteList';
 
@@ -68,7 +71,32 @@ export const defaultRoute: RouteList[] = [
    
     ]
   },
-
+  {
+    path: '/Visualization',
+    id: 'Visualization',
+    redirect: '/Visualization/g2',
+    handle: { label: <FormattedMessage id="layout.memu.Visualization" />, icon: <BarChartOutlined /> },
+    children: [
+      {
+        path: 'g2',
+        id: 'G2',
+        element: <G2View />,
+        handle: { label: <FormattedMessage id="layout.memu.G2" /> },
+      },
+      {
+        path: 's2',
+        id: 'S2',
+        element: <S2View />,
+        handle: { label: <FormattedMessage id="layout.memu.S2" /> },
+      },
+      {
+        path: 'g6',
+        id: 'G6',
+        element: <G6View />,
+        handle: { label: <FormattedMessage id="layout.memu.G6" /> },
+      },
+    ]
+  },
   {
     path: '/nested',
     id: 'Nested',

@@ -22,13 +22,14 @@ export async function initAsyncRoute(power: string) {
 }
 
 export function handlePowerRoute(dataRouter: AsyncRouteType[], routerList: RouteList[] = defaultRoute) {
-  console.log('dataRouter',dataRouter);
+  // console.log('dataRouter',dataRouter);
   const newRouteList: RouteList[] = [];
   routerList.forEach(i => {
     const item = cloneDeep(i);
     // console.log('item',item)
     if (!item.handle.whiteList) {
       const rItem = dataRouter.find(r => r.id === item.id);
+      // const rItem = dataRouter.find(r => r.id !== item.id);
       if (rItem) {
         if (rItem.children && item.children && item.children.length) {
           const children = handlePowerRoute(rItem.children, item.children);
